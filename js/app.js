@@ -4,11 +4,14 @@ function alterarStatus(id) {
     let imagem = gameClicado.querySelector('.dashboard__item__img')
     let button = gameClicado.querySelector('.dashboard__item__button');
     let nomeJogo = gameClicado.querySelector('.dashboard__item__name');
-    alert(nomeJogo.textContent);
-    if (id == 1) {
-    } else if (id == 2) {
-        
+    // alert(nomeJogo.textContent);
+    if (imagem.classList.contains('dashboard__item__img--rented')) {
+        imagem.classList.remove('dashboard__item__img--rented');
+        button.textContent = 'Alugar';
+        button.classList.remove('dashboard__item__button--return');
     } else {
-
+        imagem.classList.add('dashboard__item__img--rented');
+        button.textContent = 'Devolver';
+        button.classList.add('dashboard__item__button--return');
     }
 }
